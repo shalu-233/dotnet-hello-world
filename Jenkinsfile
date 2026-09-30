@@ -12,14 +12,14 @@ pipeline {
     stages {
         stage ('scm') {
             steps {
-                git branch: "${params.branch}",
-                    url: "${giturl}"
+                git branch: "$params.branch",
+                    url: "$giturl"
             }
         }
         stage ('build') {
             steps {
-                sh "dotnet build -c Release ${BUILDPATH}",
-                sh "mkdir ${directory} && dotnet publish -o ./${directory} -c Release ${BUILDPATH}"
+                sh "dotnet build -c Release $BUILDPATH",
+                sh "mkdir $directory && dotnet publish -o ./$directory -c Release $BUILDPATH"
             }
         }
         post {
