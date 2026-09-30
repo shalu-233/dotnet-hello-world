@@ -22,10 +22,10 @@ pipeline {
                 sh "mkdir ${params.directory} && dotnet publish -o ./${params.directory} -c Release ${params.BUILDPATH}"
             }
         }
-        post {
-            success {
-                echo "this is completed"
-            }
+    }
+    post {
+        success {
+            echo "this is completed"
         }
     }
 }
