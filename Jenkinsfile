@@ -6,7 +6,7 @@ pipeline {
     parameters {
         string( name: 'branch', defaultValue : 'main')
         string( name: 'giturl', defaultValue: 'https://github.com/dotnet/samples.git' )
-        string( name: 'BUILDPATH', defaultValue: 'hello-world-api/hello-world-api.csproj')
+        string( name: 'BUILDPATH', defaultValue: 'hello-world-api')
         string( name: 'directory', defaultValue: 'published')
     }
     stages {
