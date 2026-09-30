@@ -18,7 +18,7 @@ pipeline {
         }
         stage ('build') {
             steps {
-                sh "dotnet build -c Release ${params.BUILDPATH}",
+                sh "dotnet build -c Release ${params.BUILDPATH}"
                 sh "mkdir ${params.directory} && dotnet publish -o ./${params.directory} -c Release ${params.BUILDPATH}"
             }
         }
